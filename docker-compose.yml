@@ -7,8 +7,10 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - LI_USERNAME=${LI_USER}
+      - LI_EMAIL=${LI_EMAIL}
       - LI_PASSWORD=${LI_PASSWORD}
+      - LI_FRIEND_URL=${LI_FRIEND_URL}
+      - VNC_NO_PASSWORD=1
     shm_size: '2gb'
     ports:
       - 7900:7900
