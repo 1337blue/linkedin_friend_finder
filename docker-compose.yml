@@ -1,0 +1,14 @@
+
+version: "3.8"
+
+services:
+  linkedin-friend-finder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - LI_USERNAME=${LI_USER}
+      - LI_PASSWORD=${LI_PASSWORD}
+    shm_size: '2gb'
+    ports:
+      - 7900:7900
