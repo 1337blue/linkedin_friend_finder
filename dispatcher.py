@@ -36,7 +36,10 @@ def parse_options():
     parser.add_argument(
         "--linkedin_friend_url",
         type=str,
-        help="Full LinkedIn friend url (https://www.linkedin.com/in/boomadevi-madhanagopal-abb3b316/).",
+        help="""
+            Full LinkedIn friend url
+            (https://www.linkedin.com/in/boomadevi-madhanagopal-abb3b316/).
+        """,
         default=os.getenv("LI_FRIEND_URL"),
     )
 

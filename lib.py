@@ -1,3 +1,8 @@
+"""
+The applications logic lives here for now so be nice here!
+"""
+
+
 from linkedin_scraper import Person, actions
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -5,6 +10,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 def find_friends(email: str, password: str, linkedin_person_url: str):
+    """
+    Looks for LinkedIn connections of a given user and returns them.
+    """
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     driver = webdriver.Chrome(
