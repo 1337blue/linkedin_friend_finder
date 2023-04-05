@@ -7,7 +7,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 def find_friends(email: str, password: str, linkedin_person_url: str):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options,)
+    driver = webdriver.Chrome(
+        ChromeDriverManager().install(),
+        options=chrome_options,
+    )
 
     actions.login(
         driver, email, password
