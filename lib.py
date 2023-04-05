@@ -1,12 +1,13 @@
 from linkedin_scraper import Person, actions
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 def find_friends(email: str, password: str, linkedin_person_url: str):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome("./chromedriver", options=chrome_options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options,)
 
     actions.login(
         driver, email, password
@@ -17,4 +18,6 @@ def find_friends(email: str, password: str, linkedin_person_url: str):
     print("Person contacts: ")
 
     for contact in person.contacts:
-        print(f"Contact: {contact.name} - {contact.occupation} -> {contact.url}")
+        print(f"Contact: {contact.name} - {contact.occupation} -> {contact.url}\n")
+
+    print(len(person.contacts))

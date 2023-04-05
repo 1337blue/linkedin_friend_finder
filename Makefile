@@ -27,7 +27,7 @@ start-local-env:
 
 start-friend-finding:
 	$(MAKE) start-local-env
-	@$(COMPOSE_EXEC) main.py
+	@$(COMPOSE_EXEC) ./linkedin_friend_finder.py
 	$(MAKE) stop-local-env
 
 stop-local-env:
